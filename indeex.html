@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My PWA Website</title>
+
+  <!-- Manifest for PWA -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Register Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js")
+          .then(() => console.log("Service Worker Registered"))
+          .catch(err => console.log("SW registration failed:", err));
+      });
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Offline Website (PWA Ready)</h1>
+  <p>Gagana ako kahit walang internet 😊</p>
+
+</body>
+</html>
